@@ -12,13 +12,24 @@ public class BulletController : MonoBehaviour
     {
         _pc = GameObject.FindGameObjectWithTag("Player").GetComponent<playercontroller>();
         rb = GetComponent<Rigidbody2D>();
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        difference.Normalize();
-    
-        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
-        rb.velocity = transform.right * speed;
-        Invoke("DestroyBullet", timeDestroy);
+        if (gameObject.CompareTag("Bullet"))
+        {
+            Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            difference.Normalize();
+            float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
+            rb.velocity = transform.right * speed;
+            Invoke("DestroyBullet", timeDestroy);
+        }
+        else
+        {
+            Vector3 difference = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position - transform.position;
+            difference.Normalize();
+            float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
+            rb.velocity = transform.right * speed;
+            Invoke("DestroyBullet", timeDestroy);
+        }
     }
 
     private void DestroyBullet()
