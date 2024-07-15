@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1320332096572786791}
   m_Layer: 0
   m_Name: UFO
-  m_TagString: Untagged
+  m_TagString: UFO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,6 +133,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8507850618397637610, guid: ac232382970194217b80a05d43bdd2aa, type: 3}
   fireInterval: 1.5
   speed: 2
+  safeDistance: 10
 --- !u!61 &1320332096572786791
 BoxCollider2D:
   m_ObjectHideFlags: 0

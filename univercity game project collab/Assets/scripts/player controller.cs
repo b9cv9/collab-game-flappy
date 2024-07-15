@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.Collections;
 public class playercontroller : MonoBehaviour
 {
     Rigidbody2D body;
@@ -13,7 +13,9 @@ public class playercontroller : MonoBehaviour
     public float fireRate = 0.5f;
     private float nextFire = 0.0f;
 
-    void Start ()
+    public int lives = 3;
+
+    void Start()
     {
         body = GetComponent<Rigidbody2D>();
     }
@@ -56,4 +58,39 @@ public class playercontroller : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         }
     }
+
+     private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Asteroid") || collision.gameObject.CompareTag("UFO"))
+        {
+            lives--;
+            Debug.Log("Player hit! Lives left: " + lives);
+
+            if (lives <= 0)
+            {
+                // Игрок умирает
+                Destroy(gameObject);
+                Debug.Log("Player died.");
+            }
+            else
+            {
+                // Обрабатываем столкновение, отталкивание или временное бессмертие
+                // Можно добавить эффект временного бессмертия или отбрасывание игрока
+                StartCoroutine(TemporaryInvincibility());
+            }
+        }
+    }
+
+    private IEnumerator TemporaryInvincibility()
+    {
+        // Временно делаем игрока неуязвимым
+        Collider2D collider = GetComponent<Collider2D>();
+        collider.enabled = false;
+        yield return new WaitForSeconds(2); // Время неуязвимости
+        collider.enabled = true;
+    }
 }
+
+
+    
+

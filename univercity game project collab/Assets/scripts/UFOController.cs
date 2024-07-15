@@ -6,6 +6,7 @@ public class UFOController : MonoBehaviour
     private Transform player;
     public float fireInterval = 1.5f;
     public float speed = 2f;
+    public float safeDistance = 5f;
 
     private void Start()
     {
@@ -14,11 +15,28 @@ public class UFOController : MonoBehaviour
         if (playerObject != null)
         {
             player = playerObject.GetComponent<Transform>();
-            GetComponent<Rigidbody2D>().velocity = (player.position - transform.position).normalized * speed;
         }
         else
         {
             Debug.LogError("Player object not found! Make sure there is a GameObject with tag 'Player' in your scene.");
+        }
+    }
+
+    private void Update()
+    {
+        if (player != null)
+        {
+            Vector2 direction = (player.position - transform.position).normalized;
+            float distance = Vector2.Distance(player.position, transform.position);
+
+            if (distance > safeDistance)
+            {
+                GetComponent<Rigidbody2D>().velocity = direction * speed;
+            }
+            else
+            {
+                GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            }
         }
     }
 
@@ -37,7 +55,8 @@ public class UFOController : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             Destroy(collision.gameObject);
-            Destroy(gameObject); 
+            Destroy(gameObject);
+            Debug.Log("UFO destroyed.");
         }
     }
 }
