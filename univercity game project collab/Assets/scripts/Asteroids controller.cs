@@ -1,33 +1,41 @@
 using UnityEngine;
 
-public class Asteroidscontroller : MonoBehaviour
+public class AsteroidController : MonoBehaviour
 {
-    private Transform player;
-    private Rigidbody2D rb;
-    int rotSpeed;
-    private Vector2 movement;
-    [SerializeField] private int speed = 5;
+    public GameObject mediumAsteroidPrefab;
+    public GameObject smallAsteroidPrefab;
+    public int size = 3; // 3 - large, 2 - medium, 1 - small
 
-    void Start()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        rotSpeed = Random.Range(-50, 50);
-        rb = GetComponent<Rigidbody2D>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(collision.gameObject); // Destroy the bullet
+            if (size == 3)
+            {
+                SpawnMediumAsteroids(2);
+            }
+            else if (size == 2)
+            {
+                SpawnSmallAsteroids(2);
+            }
+            Destroy(gameObject); 
+        }
     }
-    void Update()
+
+    void SpawnMediumAsteroids(int count)
     {
-        Vector3 direction = player.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        direction.Normalize();
-        movement = direction;
+        for (int i = 0; i < count; i++)
+        {
+            Instantiate(mediumAsteroidPrefab, transform.position, Quaternion.identity);
+        }
     }
-    private void FixedUpdate()
+
+    void SpawnSmallAsteroids(int count)
     {
-        MoveChar(movement);
-    }
-    private void MoveChar(Vector2 direction)
-    {
-        rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
-        transform.Rotate(new Vector3(0, 0, speed * Time.deltaTime * rotSpeed));
+        for (int i = 0; i < count; i++)
+        {
+            Instantiate(smallAsteroidPrefab, transform.position, Quaternion.identity);
+        }
     }
 }
