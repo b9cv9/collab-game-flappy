@@ -45,7 +45,7 @@ public class AsteroidController : MonoBehaviour
         rb.velocity = Random.insideUnitCircle * 2f;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
@@ -58,24 +58,24 @@ public class AsteroidController : MonoBehaviour
     {
         if (size == 3)
         {
-            if (Random.value < 0.5f)
+            if (Random.value < 0.75f)
             {
                 SpawnMediumAsteroids(2); // Split into two medium asteroids
             }
             else
             {
-                SpawnMediumAsteroids(1); // Split into one medium asteroid
+                SpawnMediumAsteroids(0); // Split into one medium asteroid
             }
         }
         else if (size == 2)
         {
-            if (Random.value < 0.5f)
+            if (Random.value < 0.75f)
             {
                 SpawnSmallAsteroids(2); // Split into two small asteroids
             }
             else
             {
-                SpawnSmallAsteroids(1); // Split into one small asteroid
+                SpawnSmallAsteroids(0); // Split into one small asteroid
             }
         }
 

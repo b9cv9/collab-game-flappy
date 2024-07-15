@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 210925142017910362}
   - component: {fileID: 6924252409343569488}
   m_Layer: 0
-  m_Name: Bullet
-  m_TagString: Bullet
+  m_Name: ufo bullet
+  m_TagString: ufoBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5225540622116197949, guid: 2e0805ee88da54d69969cffd864d0691, type: 3}
+  m_Sprite: {fileID: 141893073332109768, guid: 51302d09606db46e8b375b644e5e059e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

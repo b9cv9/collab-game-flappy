@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class BulletController : MonoBehaviour
@@ -5,9 +6,11 @@ public class BulletController : MonoBehaviour
     public float timeDestroy = 3f;
     public float speed = 10f;
     private Rigidbody2D rb;
+    private playercontroller _pc;
 
     void Start()
     {
+        _pc = GameObject.FindGameObjectWithTag("Player").GetComponent<playercontroller>();
         rb = GetComponent<Rigidbody2D>();
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         difference.Normalize();
@@ -22,9 +25,14 @@ public class BulletController : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
+    
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(gameObject); 
+        if (other.gameObject.CompareTag("Player") && gameObject.CompareTag("ufoBullet"))
+        {
+            _pc.minusLive();
+            Destroy(gameObject);
+        }
     }
 }

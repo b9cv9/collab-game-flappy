@@ -1,9 +1,11 @@
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
+
 public class playercontroller : MonoBehaviour
 {
     Rigidbody2D body;
-
+    
     float horizontal;
     float vertical;
     float moveLimiter = 0.7f;
@@ -58,26 +60,15 @@ public class playercontroller : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         }
     }
-
-     private void OnCollisionEnter2D(Collision2D collision)
+    
+    
+     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Asteroid") || collision.gameObject.CompareTag("UFO"))
+        if (collision.gameObject.CompareTag("Asteroid") || collision.gameObject.CompareTag("UFO") || collision.gameObject.CompareTag("ufoBullet"))
         {
-            lives--;
+            Destroy(collision.gameObject);
+            minusLive();
             Debug.Log("Player hit! Lives left: " + lives);
-
-            if (lives <= 0)
-            {
-                // Игрок умирает
-                Destroy(gameObject);
-                Debug.Log("Player died.");
-            }
-            else
-            {
-                // Обрабатываем столкновение, отталкивание или временное бессмертие
-                // Можно добавить эффект временного бессмертия или отбрасывание игрока
-                StartCoroutine(TemporaryInvincibility());
-            }
         }
     }
 
@@ -88,6 +79,23 @@ public class playercontroller : MonoBehaviour
         collider.enabled = false;
         yield return new WaitForSeconds(2); // Время неуязвимости
         collider.enabled = true;
+    }
+
+    public void minusLive()
+    {
+        lives--;
+        if (lives <= 0)
+        {
+            // Игрок умирает
+            Destroy(gameObject);
+            Debug.Log("Player died.");
+        }
+        else
+        {
+            // Обрабатываем столкновение, отталкивание или временное бессмертие
+            // Можно добавить эффект временного бессмертия или отбрасывание игрока
+            StartCoroutine(TemporaryInvincibility());
+        }
     }
 }
 
