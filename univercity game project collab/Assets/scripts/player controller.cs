@@ -53,8 +53,7 @@ public class playercontroller : MonoBehaviour
     {
         if (bulletPrefab != null)
         {
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-            bullet.GetComponent<Rigidbody2D>().velocity = transform.right * 10f;
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         }
     }
 }

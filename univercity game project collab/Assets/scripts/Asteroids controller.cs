@@ -5,11 +5,39 @@ public class AsteroidController : MonoBehaviour
     public GameObject mediumAsteroidPrefab;
     public GameObject smallAsteroidPrefab;
     public int size = 3; // 3 - large, 2 - medium, 1 - small
+    private Transform player;
+    private Rigidbody2D rb;
+    int rotSpeed;
+    private Vector2 movement;
+    [SerializeField] private int speed = 5;
 
     private void Start()
     {
         AddRandomVelocity();
+        rotSpeed = UnityEngine.Random.Range(-50, 50);
+        rb = this.GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
+    
+    
+ 
+    void Update()
+    {
+        Vector3 direction = player.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        direction.Normalize();
+        movement = direction;
+    }
+    private void FixedUpdate()
+    {
+        MoveChar(movement);
+    }
+    private void MoveChar(Vector2 direction)
+    {
+        rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
+        transform.Rotate(new Vector3(0, 0, speed * Time.deltaTime * rotSpeed));
+    }
+
 
     private void AddRandomVelocity()
     {

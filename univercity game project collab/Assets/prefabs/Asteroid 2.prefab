@@ -106,6 +106,7 @@ MonoBehaviour:
   mediumAsteroidPrefab: {fileID: 8507850618397637610, guid: dba7f1e591a5a4248985844dce5c3ae7, type: 3}
   smallAsteroidPrefab: {fileID: 8507850618397637610, guid: c2314587eda1c4884b30e8eb2e116199, type: 3}
   size: 3
+  speed: 2
 --- !u!50 &-5097609787055609068
 Rigidbody2D:
   serializedVersion: 4
