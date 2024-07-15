@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class AsteroidController : MonoBehaviour
 {
+    private Animator _explosion;
     private playercontroller _pc;
     public GameObject mediumAsteroidPrefab;
     public GameObject smallAsteroidPrefab;
@@ -14,6 +15,7 @@ public class AsteroidController : MonoBehaviour
 
     private void Start()
     {
+        _explosion = GetComponent<Animator>();
         _pc = GameObject.FindGameObjectWithTag("Player").GetComponent<playercontroller>();
         AddRandomVelocity();
         rotSpeed = UnityEngine.Random.Range(-50, 50);
@@ -54,6 +56,7 @@ public class AsteroidController : MonoBehaviour
             Destroy(collision.gameObject); // Destroy the bullet
             HandleAsteroidDestruction();
             _pc.addScore(1);
+            _TriggerAnimation();
         }
     }
 
@@ -81,8 +84,6 @@ public class AsteroidController : MonoBehaviour
                 SpawnSmallAsteroids(0); // Split into one small asteroid
             }
         }
-
-        Destroy(gameObject);
     }
 
     void SpawnMediumAsteroids(int count)
@@ -102,4 +103,13 @@ public class AsteroidController : MonoBehaviour
             Instantiate(smallAsteroidPrefab, randPos, Quaternion.identity).GetComponent<AsteroidController>().size = 1;
         }
     }
+    
+    public void _TriggerAnimation()
+    {
+        _explosion.SetTrigger("onEnemyDeath");
+        speed = 0;
+        this.gameObject.GetComponent<Collider2D>().enabled = false;
+        Destroy(this.gameObject, 1f);
+    }
+    
 }

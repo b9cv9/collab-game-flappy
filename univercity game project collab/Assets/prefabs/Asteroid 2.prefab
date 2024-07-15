@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7528989791913563511}
   - component: {fileID: -5097609787055609068}
   - component: {fileID: -7725999673104856423}
+  - component: {fileID: -7869348561475538568}
   m_Layer: 0
   m_Name: Asteroid 2
   m_TagString: Asteroid
@@ -169,3 +170,25 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.01, y: 0.1}
   m_Radius: 3.9
+--- !u!95 &-7869348561475538568
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8507850618397637610}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 324158f97754041609c7f70136e4b1ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
