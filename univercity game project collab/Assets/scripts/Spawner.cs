@@ -1,8 +1,10 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.PlayerLoop;
 
 public class Spawner : MonoBehaviour
 {
+    [SerializeField] int difficulty;
     public GameObject largeAsteroidPrefab;
     public GameObject mediumAsteroidPrefab;
     public GameObject smallAsteroidPrefab;
@@ -10,10 +12,30 @@ public class Spawner : MonoBehaviour
     private Transform player;
     public float minSpawnRadius = 5f;
     public float maxSpawnRadius = 10f;
-    public float spawnInterval = 2f;
+    [SerializeField] float spawnInterval = 2f;
+    private float chanceLarge, chanceMedium;
 
     private void Start()
     {
+        difficulty = PlayerPrefs.GetInt("diff", 1);
+        if (difficulty == 2)
+        {
+            spawnInterval = 3f;
+            chanceLarge = 0.3f;
+            chanceMedium = 0.45f;
+        }
+        else if (difficulty == 3)
+        {
+            spawnInterval = 2f;
+            chanceLarge = 0.6f;
+            chanceMedium = 0.85f;
+        }
+        else if (difficulty == 1)
+        {
+            spawnInterval = 3.5f;
+            chanceLarge = 0.05f;
+            chanceMedium = 0.35f;
+        }
         // Проверяем наличие объекта с тегом "Player" перед получением компонента Transform
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null)
@@ -55,23 +77,15 @@ public class Spawner : MonoBehaviour
     {
         float randomValue = Random.value;
 
-        if (randomValue < 0.1f)
+        if (randomValue < chanceLarge)
         {
             return largeAsteroidPrefab;
         }
-        else if (randomValue < 0.2f)
-        {
-            return largeAsteroidPrefab;
-        }
-        else if (randomValue < 0.75f)
+        else if (randomValue < chanceMedium)
         {
             return mediumAsteroidPrefab;
         }
-        else if (randomValue < 0.85f)
-        {
-            return mediumAsteroidPrefab;
-        }
-        else if (randomValue < 0.95f)
+        else if (randomValue < 0.95f && difficulty == 3)
         {
             return ufoPrefab;
         }

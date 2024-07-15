@@ -272,6 +272,7 @@ GameObject:
   - component: {fileID: 192879940}
   - component: {fileID: 192879939}
   - component: {fileID: 192879938}
+  - component: {fileID: 192879941}
   m_Layer: 5
   m_Name: "\u041C\u0435\u043D\u044E"
   m_TagString: Untagged
@@ -372,7 +373,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 192879938}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 192879941}
+        m_TargetAssemblyTypeName: sceneswitcher, Assembly-CSharp
+        m_MethodName: loadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &192879940
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -381,6 +394,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192879936}
   m_CullTransparentMesh: 1
+--- !u!114 &192879941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192879936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f5d3e17c0fd4181a3b4ecce75aaf52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneNumber: 0
 --- !u!1 &343356910
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,7 +748,7 @@ GameObject:
   - component: {fileID: 542420210}
   - component: {fileID: 542420209}
   - component: {fileID: 542420208}
-  - component: {fileID: 542420207}
+  - component: {fileID: 542420211}
   m_Layer: 5
   m_Name: medium
   m_TagString: Untagged
@@ -750,19 +776,6 @@ RectTransform:
   m_AnchoredPosition: {x: -20, y: 81}
   m_SizeDelta: {x: 216.9089, y: 67.4258}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &542420207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542420205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27f5d3e17c0fd4181a3b4ecce75aaf52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneNumber: 1
 --- !u!114 &542420208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -807,9 +820,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 542420207}
-        m_TargetAssemblyTypeName: sceneswitcher, Assembly-CSharp
-        m_MethodName: loadScene
+      - m_Target: {fileID: 542420211}
+        m_TargetAssemblyTypeName: difficultysetter, Assembly-CSharp
+        m_MethodName: setDifficulty
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -857,6 +870,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542420205}
   m_CullTransparentMesh: 1
+--- !u!114 &542420211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542420205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056881932c8784f3d8e1908e8684793f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 2
 --- !u!1 &703700020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,7 +1517,7 @@ GameObject:
   - component: {fileID: 1114995049}
   - component: {fileID: 1114995048}
   - component: {fileID: 1114995047}
-  - component: {fileID: 1114995046}
+  - component: {fileID: 1114995050}
   m_Layer: 5
   m_Name: easy
   m_TagString: Untagged
@@ -1519,19 +1545,6 @@ RectTransform:
   m_AnchoredPosition: {x: -20, y: 165}
   m_SizeDelta: {x: 216.9089, y: 67.4258}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1114995046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1114995044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27f5d3e17c0fd4181a3b4ecce75aaf52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneNumber: 1
 --- !u!114 &1114995047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1576,9 +1589,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114995046}
-        m_TargetAssemblyTypeName: sceneswitcher, Assembly-CSharp
-        m_MethodName: loadScene
+      - m_Target: {fileID: 1114995050}
+        m_TargetAssemblyTypeName: difficultysetter, Assembly-CSharp
+        m_MethodName: setDifficulty
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1626,6 +1639,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114995044}
   m_CullTransparentMesh: 1
+--- !u!114 &1114995050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114995044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056881932c8784f3d8e1908e8684793f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 1
 --- !u!1 &1371067801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,7 +1700,7 @@ GameObject:
   - component: {fileID: 1428066237}
   - component: {fileID: 1428066236}
   - component: {fileID: 1428066235}
-  - component: {fileID: 1428066234}
+  - component: {fileID: 1428066238}
   m_Layer: 5
   m_Name: high
   m_TagString: Untagged
@@ -1702,19 +1728,6 @@ RectTransform:
   m_AnchoredPosition: {x: -19.999989, y: 0}
   m_SizeDelta: {x: 216.9089, y: 67.4258}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1428066234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428066232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27f5d3e17c0fd4181a3b4ecce75aaf52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneNumber: 1
 --- !u!114 &1428066235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1759,9 +1772,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1428066234}
-        m_TargetAssemblyTypeName: sceneswitcher, Assembly-CSharp
-        m_MethodName: loadScene
+      - m_Target: {fileID: 1428066238}
+        m_TargetAssemblyTypeName: difficultysetter, Assembly-CSharp
+        m_MethodName: setDifficulty
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1809,6 +1822,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428066232}
   m_CullTransparentMesh: 1
+--- !u!114 &1428066238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428066232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056881932c8784f3d8e1908e8684793f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 3
 --- !u!1 &1444696684
 GameObject:
   m_ObjectHideFlags: 0
