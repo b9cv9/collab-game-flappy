@@ -44,16 +44,13 @@ public class UFOController : MonoBehaviour
     {
         if (player != null)
         {
-            // Calculate the direction towards the player
+            
             Vector2 direction = (player.position - transform.position).normalized;
-
-            // Instantiate the bullet and set its velocity
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            bullet.GetComponent<Rigidbody2D>().velocity = direction * 5f; // Adjust bullet speed as needed
+            bullet.GetComponent<Rigidbody2D>().velocity = direction * 5f;
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
@@ -62,4 +59,5 @@ public class UFOController : MonoBehaviour
             Debug.Log("UFO destroyed.");
         }
     }
+   
 }
