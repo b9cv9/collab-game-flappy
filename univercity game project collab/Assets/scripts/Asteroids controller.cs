@@ -86,7 +86,8 @@ public class AsteroidController : MonoBehaviour
     {
         for (int i = 0; i < count; i++)
         {
-            Instantiate(mediumAsteroidPrefab, transform.position, Quaternion.identity).GetComponent<AsteroidController>().size = 2;
+            Vector3 randPos = new Vector3(Random.Range(transform.position.x - 5f, transform.position.x + 5f), Random.Range(transform.position.y - 5f, transform.position.y + 5f), transform.position.z);
+            Instantiate(mediumAsteroidPrefab, randPos, Quaternion.identity).GetComponent<AsteroidController>().size = 2;
         }
     }
 
@@ -94,7 +95,8 @@ public class AsteroidController : MonoBehaviour
     {
         for (int i = 0; i < count; i++)
         {
-            Instantiate(smallAsteroidPrefab, transform.position, Quaternion.identity).GetComponent<AsteroidController>().size = 1;
+            Vector3 randPos = new Vector3(Random.Range(transform.position.x - 5f, transform.position.x + 5f), Random.Range(transform.position.y - 5f, transform.position.y + 5f), transform.position.z);
+            Instantiate(smallAsteroidPrefab, randPos, Quaternion.identity).GetComponent<AsteroidController>().size = 1;
         }
     }
 }
