@@ -14,8 +14,17 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(SpawnObjects());
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        // Проверяем наличие объекта с тегом "Player" перед получением компонента Transform
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
+        {
+            player = playerObject.GetComponent<Transform>();
+            StartCoroutine(SpawnObjects());
+        }
+        else
+        {
+            Debug.LogError("Player object not found! Make sure there is a GameObject with tag 'Player' in your scene.");
+        }
     }
 
     private IEnumerator SpawnObjects()
@@ -31,10 +40,15 @@ public class Spawner : MonoBehaviour
 
     private Vector2 GetRandomPosition()
     {
+        if (player == null)
+        {
+            Debug.LogError("Player transform is null. Cannot determine spawn position.");
+            return Vector2.zero;
+        }
+
         Vector2 randomDirection = Random.insideUnitCircle.normalized;
         float distance = Random.Range(minSpawnRadius, maxSpawnRadius);
-        Vector2 spawnPosition = (Vector2)player.position + randomDirection * distance;
-        return spawnPosition;
+        return (Vector2)player.position + randomDirection * distance;
     }
 
     private GameObject GetRandomObject()
@@ -43,27 +57,27 @@ public class Spawner : MonoBehaviour
 
         if (randomValue < 0.1f)
         {
-            return largeAsteroidPrefab; // 10% large asteroids that break into two medium ones
+            return largeAsteroidPrefab;
         }
         else if (randomValue < 0.2f)
         {
-            return largeAsteroidPrefab; // 10% large asteroids that break into medium and then small
+            return largeAsteroidPrefab;
         }
         else if (randomValue < 0.75f)
         {
-            return mediumAsteroidPrefab; // 55% medium asteroids that break into two small ones
+            return mediumAsteroidPrefab;
         }
         else if (randomValue < 0.85f)
         {
-            return mediumAsteroidPrefab; // 10% medium asteroids that break into medium
+            return mediumAsteroidPrefab;
         }
         else if (randomValue < 0.95f)
         {
-            return ufoPrefab; // 15% UFOs
+            return ufoPrefab;
         }
         else
         {
-            return smallAsteroidPrefab; // 10% small asteroids
+            return smallAsteroidPrefab;
         }
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7528989791913563511}
   - component: {fileID: -5097609787055609068}
   m_Layer: 0
-  m_Name: Asteroid 3
+  m_Name: UFO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

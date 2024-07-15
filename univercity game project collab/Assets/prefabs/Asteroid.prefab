@@ -102,7 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0341dc6326f3b483bad7fb83caa9bf92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  mediumAsteroidPrefab: {fileID: 8507850618397637610, guid: dba7f1e591a5a4248985844dce5c3ae7, type: 3}
+  smallAsteroidPrefab: {fileID: 8507850618397637610}
+  size: 3
 --- !u!50 &-5097609787055609068
 Rigidbody2D:
   serializedVersion: 4
