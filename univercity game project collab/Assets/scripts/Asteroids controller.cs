@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class AsteroidController : MonoBehaviour
 {
+    private playercontroller _pc;
     public GameObject mediumAsteroidPrefab;
     public GameObject smallAsteroidPrefab;
     public int size = 3; // 3 - large, 2 - medium, 1 - small
@@ -13,6 +14,7 @@ public class AsteroidController : MonoBehaviour
 
     private void Start()
     {
+        _pc = GameObject.FindGameObjectWithTag("Player").GetComponent<playercontroller>();
         AddRandomVelocity();
         rotSpeed = UnityEngine.Random.Range(-50, 50);
         rb = this.GetComponent<Rigidbody2D>();
@@ -51,6 +53,7 @@ public class AsteroidController : MonoBehaviour
         {
             Destroy(collision.gameObject); // Destroy the bullet
             HandleAsteroidDestruction();
+            _pc.addScore(1);
         }
     }
 
@@ -58,7 +61,7 @@ public class AsteroidController : MonoBehaviour
     {
         if (size == 3)
         {
-            if (Random.value < 0.75f)
+            if (Random.value < 0.25f)
             {
                 SpawnMediumAsteroids(2); // Split into two medium asteroids
             }
@@ -69,7 +72,7 @@ public class AsteroidController : MonoBehaviour
         }
         else if (size == 2)
         {
-            if (Random.value < 0.75f)
+            if (Random.value < 0.25f)
             {
                 SpawnSmallAsteroids(2); // Split into two small asteroids
             }
@@ -86,7 +89,7 @@ public class AsteroidController : MonoBehaviour
     {
         for (int i = 0; i < count; i++)
         {
-            Vector3 randPos = new Vector3(Random.Range(transform.position.x - 5f, transform.position.x + 5f), Random.Range(transform.position.y - 5f, transform.position.y + 5f), transform.position.z);
+            Vector3 randPos = new Vector3(Random.Range(transform.position.x - 2.5f, transform.position.x + 2.5f), Random.Range(transform.position.y - 2.5f, transform.position.y + 2.5f), transform.position.z);
             Instantiate(mediumAsteroidPrefab, randPos, Quaternion.identity).GetComponent<AsteroidController>().size = 2;
         }
     }
@@ -95,7 +98,7 @@ public class AsteroidController : MonoBehaviour
     {
         for (int i = 0; i < count; i++)
         {
-            Vector3 randPos = new Vector3(Random.Range(transform.position.x - 5f, transform.position.x + 5f), Random.Range(transform.position.y - 5f, transform.position.y + 5f), transform.position.z);
+            Vector3 randPos = new Vector3(Random.Range(transform.position.x - 2.5f, transform.position.x + 2.5f), Random.Range(transform.position.y - 2.5f, transform.position.y + 2.5f), transform.position.z);
             Instantiate(smallAsteroidPrefab, randPos, Quaternion.identity).GetComponent<AsteroidController>().size = 1;
         }
     }

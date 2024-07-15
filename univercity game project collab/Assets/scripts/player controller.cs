@@ -1,15 +1,19 @@
 using UnityEngine;
 using System.Collections;
-using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public class playercontroller : MonoBehaviour
 {
+    public Text textScore, textLives;
+    
     Rigidbody2D body;
     
     float horizontal;
     float vertical;
     float moveLimiter = 0.7f;
-
+    
+    private int score = 0;
+    
     public float runSpeed = 20.0f;
     public GameObject bulletPrefab;
     public float fireRate = 0.5f;
@@ -19,6 +23,8 @@ public class playercontroller : MonoBehaviour
 
     void Start()
     {
+        textScore.text = "Счёт: " + score.ToString();
+        textLives.text = "Жизни: " + lives.ToString();
         body = GetComponent<Rigidbody2D>();
     }
 
@@ -96,6 +102,14 @@ public class playercontroller : MonoBehaviour
             // Можно добавить эффект временного бессмертия или отбрасывание игрока
             StartCoroutine(TemporaryInvincibility());
         }
+        textLives.text = "Жизни: " + lives.ToString();
+    }
+
+
+    public void addScore(int value)
+    {
+        score += value;
+        textScore.text = "Счёт: " + score.ToString();
     }
 }
 
