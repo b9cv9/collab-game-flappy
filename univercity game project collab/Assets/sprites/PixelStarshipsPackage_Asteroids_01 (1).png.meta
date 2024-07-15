@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: fe16cbfa2a84641468346f9009ffbe1e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -455456241162239227
+    second: PixelStarshipsPackage_Asteroids_01 (1)_0
+  - first:
+      213: 8111175290072601864
+    second: PixelStarshipsPackage_Asteroids_01 (1)_1
+  - first:
+      213: 8730961164799427401
+    second: PixelStarshipsPackage_Asteroids_01 (1)_2
+  - first:
+      213: 6052283700412337028
+    second: PixelStarshipsPackage_Asteroids_01 (1)_3
+  - first:
+      213: 4655246561037116950
+    second: PixelStarshipsPackage_Asteroids_01 (1)_4
+  - first:
+      213: 1141112308899760971
+    second: PixelStarshipsPackage_Asteroids_01 (1)_5
+  - first:
+      213: -1255912970612603542
+    second: PixelStarshipsPackage_Asteroids_01 (1)_6
+  - first:
+      213: -5075989449131350356
+    second: PixelStarshipsPackage_Asteroids_01 (1)_7
+  - first:
+      213: -1181656849123439780
+    second: PixelStarshipsPackage_Asteroids_01 (1)_8
+  - first:
+      213: 8602992926361552345
+    second: PixelStarshipsPackage_Asteroids_01 (1)_9
+  - first:
+      213: -8294408593452824299
+    second: PixelStarshipsPackage_Asteroids_01 (1)_10
+  - first:
+      213: -7516404892442005744
+    second: PixelStarshipsPackage_Asteroids_01 (1)_11
+  - first:
+      213: -6268115415693285067
+    second: PixelStarshipsPackage_Asteroids_01 (1)_12
+  - first:
+      213: -1544797183781734592
+    second: PixelStarshipsPackage_Asteroids_01 (1)_13
+  - first:
+      213: 7390668245853856556
+    second: PixelStarshipsPackage_Asteroids_01 (1)_14
+  - first:
+      213: -3653150945446943453
+    second: PixelStarshipsPackage_Asteroids_01 (1)_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: small asteroid
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 481
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5034ac636f4eda9f0800000000000000
+      internalID: -455456241162239227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelStarshipsPackage_Asteroids_01 (1)_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 482
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80514b393fea09070800000000000000
+      internalID: 8111175290072601864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelStarshipsPackage_Asteroids_01 (1)_2
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 451
+        width: 50
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 943c997bbea9a2970800000000000000
+      internalID: 8730961164799427401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelStarshipsPackage_Asteroids_01 (1)_3
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 389
+        width: 50
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48bc6fa85f70ef350800000000000000
+      internalID: 6052283700412337028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelStarshipsPackage_Asteroids_01 (1)_4
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 388
+        width: 49
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 616e97c2512ca9040800000000000000
+      internalID: 4655246561037116950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelStarshipsPackage_Asteroids_01 (1)_5
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 392
+        width: 102
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4bcbcc599b06df00800000000000000
+      internalID: 1141112308899760971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelStarshipsPackage_Asteroids_01 (1)_6
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 264
+        width: 103
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6584ddaec9129ee0800000000000000
+      internalID: -1255912970612603542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelStarshipsPackage_Asteroids_01 (1)_7
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 449
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca625e06d767e89b0800000000000000
+      internalID: -5075989449131350356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelStarshipsPackage_Asteroids_01 (1)_8
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 449
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5b079d3b59e99fe0800000000000000
+      internalID: -1181656849123439780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelStarshipsPackage_Asteroids_01 (1)_9
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 388
+        width: 49
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d58af46c78f36770800000000000000
+      internalID: 8602992926361552345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelStarshipsPackage_Asteroids_01 (1)_10
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 390
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5190c45745754ec80800000000000000
+      internalID: -8294408593452824299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: middle asteroid
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 267
+        width: 102
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01f6cfde29d50b790800000000000000
+      internalID: -7516404892442005744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelStarshipsPackage_Asteroids_01 (1)_12
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 264
+        width: 102
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 539a3744d3e2309a0800000000000000
+      internalID: -6268115415693285067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelStarshipsPackage_Asteroids_01 (1)_13
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 270
+        width: 112
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0477aa26527cf8ae0800000000000000
+      internalID: -1544797183781734592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: large asteroid
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 8
+        width: 229
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c23e0e6bc9de09660800000000000000
+      internalID: 7390668245853856556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelStarshipsPackage_Asteroids_01 (1)_15
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 14
+        width: 217
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 325a0c102966d4dc0800000000000000
+      internalID: -3653150945446943453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4120ede964274406a822790a92f15edb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PixelStarshipsPackage_Asteroids_01 (1)_1: 8111175290072601864
+      PixelStarshipsPackage_Asteroids_01 (1)_10: -8294408593452824299
+      PixelStarshipsPackage_Asteroids_01 (1)_12: -6268115415693285067
+      PixelStarshipsPackage_Asteroids_01 (1)_13: -1544797183781734592
+      PixelStarshipsPackage_Asteroids_01 (1)_15: -3653150945446943453
+      PixelStarshipsPackage_Asteroids_01 (1)_2: 8730961164799427401
+      PixelStarshipsPackage_Asteroids_01 (1)_3: 6052283700412337028
+      PixelStarshipsPackage_Asteroids_01 (1)_4: 4655246561037116950
+      PixelStarshipsPackage_Asteroids_01 (1)_5: 1141112308899760971
+      PixelStarshipsPackage_Asteroids_01 (1)_6: -1255912970612603542
+      PixelStarshipsPackage_Asteroids_01 (1)_7: -5075989449131350356
+      PixelStarshipsPackage_Asteroids_01 (1)_8: -1181656849123439780
+      PixelStarshipsPackage_Asteroids_01 (1)_9: 8602992926361552345
+      large asteroid: 7390668245853856556
+      middle asteroid: -7516404892442005744
+      small asteroid: -455456241162239227
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
