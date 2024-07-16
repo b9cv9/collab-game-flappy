@@ -4,8 +4,8 @@ public class InfiniteBackground : MonoBehaviour
 {
     public GameObject background1;
     public GameObject background2;
-    public float backgroundSpeed = 0.1f;
-    [SerializeField] private float backgroundWidth;
+    public float backgroundSpeed = 150f;
+    [SerializeField] private float backgroundWidth = 2000f;
     void Update()
     {
         MoveBackground(background1);
