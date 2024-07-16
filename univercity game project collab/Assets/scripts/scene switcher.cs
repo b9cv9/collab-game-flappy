@@ -1,17 +1,32 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
-public class sceneswitcher : MonoBehaviour
+public class SceneSwitcher : MonoBehaviour
 {
     [SerializeField] private int sceneNumber;
 
-    public void loadScene()
+    public void LoadScene()
     {
         SceneManager.LoadScene(sceneNumber);
-        ScoreManager.instance.ResetScore();
+        try
+        {
+            if (ScoreManager.instance != null)
+            {
+                ScoreManager.instance.ResetScore();
+            }
+            else
+            {
+                Debug.LogError("ScoreManager instance is null");
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Error while resetting score: {e}");
+        }
     }
 
-    public void exitGame()
+    public void ExitGame()
     {
         Application.Quit();
     }

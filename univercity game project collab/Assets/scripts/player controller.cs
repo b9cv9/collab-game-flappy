@@ -98,7 +98,7 @@ public class playercontroller : MonoBehaviour
             lives = 0;
             Destroy(gameObject);
             Debug.Log("Player died.");
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(7);
         }
         else
         {
