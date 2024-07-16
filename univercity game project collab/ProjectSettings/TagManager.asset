@@ -10,6 +10,7 @@ TagManager:
   - UFO
   - ufoBullet
   - Pause
+  - shield
   layers:
   - Default
   - TransparentFX

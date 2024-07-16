@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class playercontroller : MonoBehaviour
 {
+    private GameObject shield;
+    private Animator shieldAnim;
     public Text textScore, textLives;
     
     Rigidbody2D body;
@@ -24,6 +26,9 @@ public class playercontroller : MonoBehaviour
 
     void Start()
     {
+        shield = GameObject.FindGameObjectWithTag("shield");
+        shieldAnim = shield.GetComponent<Animator>();
+        shield.SetActive(false);
         textScore.text = "Счёт: " + score.ToString();
         textLives.text = "Жизни: " + lives.ToString();
         body = GetComponent<Rigidbody2D>();
@@ -79,8 +84,10 @@ public class playercontroller : MonoBehaviour
     {
         Collider2D collider = GetComponent<Collider2D>();
         collider.enabled = false;
+        _ShieldAnimation();
         yield return new WaitForSeconds(2);
         collider.enabled = true;
+        shield.SetActive(false);
     }
 
     public void minusLive()
@@ -107,8 +114,11 @@ public class playercontroller : MonoBehaviour
         ScoreManager.instance.AddScore(value);
         textScore.text = "Счёт: " + ScoreManager.instance.GetScore().ToString();
     }
-}
-
-
     
-
+    
+    public void _ShieldAnimation()
+    {
+        shield.SetActive(true);
+        shieldAnim.SetTrigger("onPlayerHit");
+    }
+}
