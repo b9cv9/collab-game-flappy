@@ -53,7 +53,9 @@ public class AsteroidController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            Destroy(collision.gameObject); // Destroy the bullet
+            Destroy(collision.gameObject, 0.5f); // Destroy the bullet
+            collision.gameObject.GetComponent<Collider2D>().enabled = false;
+            collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             HandleAsteroidDestruction();
             _pc.addScore(1);
             _TriggerAnimation();
