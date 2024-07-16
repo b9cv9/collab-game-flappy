@@ -16,11 +16,11 @@ public class difficultysetter : MonoBehaviour
     {
         if (difficulty == PlayerPrefs.GetInt("diff", 1))
         {
-            this.GetComponent<Image>().sprite = active;
+            this.GetComponent<Image>().color = new Color(0f/255f, 255f/255f, 0f/255f, 255f/255f);
         }
         else
         {
-            this.GetComponent<Image>().sprite = notActive;
+            this.GetComponent<Image>().color = new Color(255f/255f, 255f/255f, 255f/255f, 255f/255f);
         }
     }
 }
