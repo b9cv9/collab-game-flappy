@@ -21,14 +21,14 @@ public class Spawner : MonoBehaviour
         if (difficulty == 2)
         {
             spawnInterval = 3f;
-            chanceLarge = 0.3f;
+            chanceLarge = 0.4f;
             chanceMedium = 0.45f;
         }
         else if (difficulty == 3)
         {
             spawnInterval = 2f;
-            chanceLarge = 0.6f;
-            chanceMedium = 0.85f;
+            chanceLarge = 0.8f;
+            chanceMedium = 0.9f;
         }
         else if (difficulty == 1)
         {
@@ -36,7 +36,6 @@ public class Spawner : MonoBehaviour
             chanceLarge = 0.05f;
             chanceMedium = 0.35f;
         }
-        // Проверяем наличие объекта с тегом "Player" перед получением компонента Transform
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null)
         {

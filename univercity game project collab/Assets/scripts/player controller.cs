@@ -30,16 +30,13 @@ public class playercontroller : MonoBehaviour
 
     void Update()
     {
-        // Получаем значение между -1 и 1
-        horizontal = Input.GetAxisRaw("Horizontal"); // -1 - влево
-        vertical = Input.GetAxisRaw("Vertical"); // -1 - вниз
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
 
-        // Поворот персонажа за курсором
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float rotateZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotateZ - 90f);
 
-        // Стрельба
         if ((Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0)) && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
@@ -49,9 +46,8 @@ public class playercontroller : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (horizontal != 0 && vertical != 0) // Проверка диагонального движения
+        if (horizontal != 0 && vertical != 0) 
         {
-            // Ограничение скорости при движении по диагонали до 70%
             horizontal *= moveLimiter;
             vertical *= moveLimiter;
         } 
@@ -80,10 +76,9 @@ public class playercontroller : MonoBehaviour
 
     private IEnumerator TemporaryInvincibility()
     {
-        // Временно делаем игрока неуязвимым
         Collider2D collider = GetComponent<Collider2D>();
         collider.enabled = false;
-        yield return new WaitForSeconds(2); // Время неуязвимости
+        yield return new WaitForSeconds(2);
         collider.enabled = true;
     }
 
@@ -92,14 +87,13 @@ public class playercontroller : MonoBehaviour
         lives--;
         if (lives <= 0)
         {
-            // Игрок умирает
+            lives = 0;
             Destroy(gameObject);
             Debug.Log("Player died.");
         }
         else
         {
-            // Обрабатываем столкновение, отталкивание или временное бессмертие
-            // Можно добавить эффект временного бессмертия или отбрасывание игрока
+
             StartCoroutine(TemporaryInvincibility());
         }
         textLives.text = "Жизни: " + lives.ToString();
