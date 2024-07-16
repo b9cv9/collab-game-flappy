@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playercontroller : MonoBehaviour
 {
@@ -90,6 +91,7 @@ public class playercontroller : MonoBehaviour
             lives = 0;
             Destroy(gameObject);
             Debug.Log("Player died.");
+            SceneManager.LoadScene(5);
         }
         else
         {
@@ -102,8 +104,8 @@ public class playercontroller : MonoBehaviour
 
     public void addScore(int value)
     {
-        score += value;
-        textScore.text = "Счёт: " + score.ToString();
+        ScoreManager.instance.AddScore(value);
+        textScore.text = "Счёт: " + ScoreManager.instance.GetScore().ToString();
     }
 }
 
