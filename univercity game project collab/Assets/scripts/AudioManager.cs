@@ -12,6 +12,10 @@ public class AudioManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             audioSource = GetComponent<AudioSource>();
+
+            // Инициализация громкости
+            float savedVolume = PlayerPrefs.GetFloat("Volume", 1f);
+            SetVolume(savedVolume);
         }
         else
         {
@@ -23,7 +27,7 @@ public class AudioManager : MonoBehaviour
     {
         if (audioSource != null)
         {
-            audioSource.volume = volume;
+            audioSource.volume = Mathf.Clamp01(volume);
         }
     }
 
