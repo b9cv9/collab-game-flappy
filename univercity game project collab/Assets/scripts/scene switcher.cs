@@ -8,6 +8,7 @@ public class sceneswitcher : MonoBehaviour
     public void loadScene()
     {
         SceneManager.LoadScene(sceneNumber);
+        ScoreManager.instance.ResetScore();
     }
 
     public void exitGame()

@@ -4,9 +4,9 @@ public class UFOController : MonoBehaviour
 {
     public GameObject bulletPrefab;
     private Transform player;
-    public float fireInterval = 0.5f;
+    public float fireInterval = 1.5f;
     public float speed = 2f;
-    public float safeDistance = 5f;
+    public float safeDistance = 0.7f;
 
     private void Start()
     {
@@ -41,15 +41,20 @@ public class UFOController : MonoBehaviour
     }
 
     private void FireAtPlayer()
+{
+    if (player != null)
     {
-        if (player != null)
+        float distance = Vector2.Distance(player.position, transform.position);
+        
+        if (distance < safeDistance + 0.5f) 
         {
-            
             Vector2 direction = (player.position - transform.position).normalized;
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody2D>().velocity = direction * 2f;
         }
     }
+}
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))

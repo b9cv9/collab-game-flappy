@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.PlayerLoop;
 
 public class Spawner : MonoBehaviour
 {
@@ -12,30 +11,14 @@ public class Spawner : MonoBehaviour
     private Transform player;
     public float minSpawnRadius = 5f;
     public float maxSpawnRadius = 10f;
-    [SerializeField] float spawnInterval = 2f;
-    private float chanceLarge, chanceMedium;
+    [SerializeField] float spawnInterval;
+    private float chanceLarge, chanceMedium, chanceUFO;
 
     private void Start()
     {
         difficulty = PlayerPrefs.GetInt("diff", 1);
-        if (difficulty == 2)
-        {
-            spawnInterval = 3f;
-            chanceLarge = 0.4f;
-            chanceMedium = 0.45f;
-        }
-        else if (difficulty == 3)
-        {
-            spawnInterval = 2f;
-            chanceLarge = 0.8f;
-            chanceMedium = 0.9f;
-        }
-        else if (difficulty == 1)
-        {
-            spawnInterval = 3.5f;
-            chanceLarge = 0.05f;
-            chanceMedium = 0.35f;
-        }
+        ConfigureSpawnSettings();
+        
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null)
         {
@@ -44,7 +27,36 @@ public class Spawner : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Player object not found! Make sure there is a GameObject with tag 'Player' in your scene.");
+            Debug.LogError("Player object not found! Ensure there is a GameObject with tag 'Player' in your scene.");
+        }
+    }
+
+    private void ConfigureSpawnSettings()
+    {
+        switch (difficulty)
+        {
+            case 1:
+                spawnInterval = 2.5f;
+                chanceLarge = 0.05f;
+                chanceMedium = 0.35f;
+                chanceUFO = 0.0f; 
+                break;
+            case 2:
+                spawnInterval = 2f;
+                chanceLarge = 0.4f;
+                chanceMedium = 0.45f;
+                chanceUFO = 0.1f; 
+                break;
+            case 3:
+                spawnInterval = 1.5f;
+                chanceLarge = 0.8f;
+                chanceMedium = 0.9f;
+                chanceUFO = 0.2f; 
+                break;
+            default:
+                Debug.LogWarning("Invalid difficulty level. Defaulting to difficulty 1.");
+                ConfigureSpawnSettings();
+                break;
         }
     }
 
@@ -84,7 +96,7 @@ public class Spawner : MonoBehaviour
         {
             return mediumAsteroidPrefab;
         }
-        else if (randomValue < 0.95f && difficulty == 3)
+        else if (randomValue < chanceMedium + chanceUFO && difficulty >= 2)
         {
             return ufoPrefab;
         }
